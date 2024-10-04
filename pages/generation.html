@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecoVista - Générateur d'images</title>
+    <link rel="stylesheet" href="../assets/css/generation.css">
+    <link rel="icon" href="./assets/media/images/logo_image.png" type="image/ico">
+</head>
+
+<header>
+    <div class="img-logo">
+        <a href="../index.html">
+            <img src="../assets/media/images/logo_horizontal.png" alt="Logo ecoVista">
+        </a>
+    </div>
+    <div class="links-container">
+        <nav>
+            <ul>
+                <li><a href="../index.html">À propos</a></li>
+            </ul>
+        </nav>
+        <a class="btn-register" href="../Projet ecoVista/login.html">Déconnexion</a>
+    </div>
+</header>
+
+<body>
+    <div class="intro-container">
+        <article>
+            <h1>C'est parti pour la magie !</h1>
+            <p>Choisis une image à transformer ou écris ton prompt pour créer un paysage verdoyant époustouflant !</p>
+            <button class="btn-intro-gen">
+                <img src="../assets/media/icons/icon_upload.svg" alt="Icône d'inportation">
+                <p>Importer une image</p>
+            </button>
+        </article>
+        <img src="../assets/media/images/image_generateur_intro.png" alt="Image de trois paysages crées par IA">
+    </div>
+
+    <div class="result-container">
+        <img class="plant-superpos leftup" src="../assets/media/images/image_generateur_left_up.PNG"
+            alt="Image d'une plante">
+        <img class="plant-superpos rightup" src="../assets/media/images/image_generateur_right_up.PNG"
+            alt="Image d'une plante">
+        <img class="plant-superpos rightdown" src="../assets/media/images/image_generateur_right_down.PNG"
+            alt="Image d'une plante">
+        <img class="plant-superpos leftdown" src="../assets/media/images/image_generateur_left_down.PNG"
+            alt="Image d'une plante">
+        <p id="text-result">Un peu de magie en préparation, ça arrive bientôt ! ✨</p>
+        <img id="gif-loading" src="../assets/media/videos/gif_loading.gif" alt="gif loading">
+
+        <img src="../assets/media/images/image_carrousel_14.jpeg" alt="Image crée par IA" class="new-image">
+        <p class="new-text">Voilà ! La nature prend vie, admire ton chef-d'œuvre !</p>
+
+    </div>
+
+    <script>
+        document.querySelector('.btn-intro-gen').addEventListener('click', function () {
+            document.querySelector('.result-container').scrollIntoView({ behavior: 'smooth' });
+
+            const gifLoading = document.getElementById('gif-loading');
+            gifLoading.style.display = 'block'; 
+
+            const textResult = document.getElementById('text-result');
+
+            setTimeout(function () {
+                textResult.style.display = 'none'; 
+                gifLoading.style.display = 'none'; 
+
+                const newImage = document.querySelector('.new-image');
+                newImage.style.display = 'block'; 
+
+                const newText = document.querySelector('.new-text');
+                newText.style.display = 'block'; 
+
+            }, 5000);
+        });
+    </script>
+</body>
+
+<footer>
+    <div class="social-container">
+        <div id="logo-ecovista-footer">
+            <div>
+                <img src="../assets/media/images/logo_image.png" alt="Logotype ecoVista">
+            </div>
+        </div>
+        <div class="text-social">
+            <article>
+                <h3>Suivez-nous !</h3>
+                <p>Ne ratez rien de nos créations nature-tech, ça pousse vite !</p>
+            </article>
+        </div>
+        <div class="logos-social-container">
+            <a href="#">
+                <img src="../assets/media/icons/icon_twitter.svg" alt="Logo Twitter">
+            </a>
+            <a href="#">
+                <img src="../assets/media/icons/icon_facebook.svg" alt="Logo Facebook">
+            </a>
+            <a href="#">
+                <img src="../assets/media/icons/icon_instagram.svg" alt="Logo Instagram">
+            </a>
+        </div>
+    </div>
+
+    <div class="info-container-footer">
+        <article>
+            <h3>Nos coordonnées</h3>
+            <p>Venez nous voir à notre "petit coin de verdure" :</p>
+            <div class="info-line">
+                <img src="../assets/media/icons/icon_emplacement.svg" alt="Icône emplacement">
+                <p class="bold-text-info">1 Avenue des Arbres, 13090 Aix-en-Provence</p>
+            </div>
+            <br><br>
+            <p>Ou envoyez-nous un mail à : </p>
+            <div class="info-line">
+                <img src="../assets/media/icons/icon_mail.svg" alt="Icône mail">
+                <p class="bold-text-info"> hello@ecovista.com</p>
+            </div>
+        </article>
+        <img id="image-map" src="../assets/media/images/image_map_footer.png" alt="">
+    </div>
+
+    <div class="copyright-container">
+        <p class="copyright"><span id="bold-text-copyright">© 2024 EcoVista.</span> Tous droits réservés. Projet réalisé
+            dans le cadre du Hackathon Code24Sud 2024.</p>
+        <div class="links-footer top">
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Mentions légales</a>
+            <a href="#">Conditions générales d'utilisation</a>
+            <a href="#">Politique de cookies</a>
+        </div>
+        <div class="links-footer bottom">
+            <a href="#">Données personnelles</a>
+            <a href="#">Conditions de vente</a>
+            <a href="#">Contact et support</a>
+        </div>
+    </div>
+</footer>
+
+</html>
